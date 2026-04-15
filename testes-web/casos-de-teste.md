@@ -1,13 +1,22 @@
 ## 🧪 Casos de Teste
 
-### CT01 – Login válido
-Passos:
-1. Inserir usuário correto
-2. Inserir senha correta
-3. Clicar em entrar
+### CT01 – Login com credenciais válidas
 
-Resultado esperado:
-Usuário acessa o sistema
+**Pré-condição:** Usuário cadastrado
+
+**Passos:**
+1. Acessar a aplicação SauceDemo
+2. Inserir o usuário `standard_user`
+3. Inserir a senha `secret_sauce`
+4. Clicar em `Login`
+
+**Resultado esperado:**
+Usuário deve ser redirecionado para a página de produtos
+
+**Resultado obtido:**
+Usuário foi redirecionado para a página de produtos e a lista de itens foi exibida
+
+**Status:** Aprovado
 
 ---
 
