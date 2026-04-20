@@ -24,11 +24,21 @@ Usuário foi redirecionado para a página de produtos e a lista de itens foi exi
 
 ---
 
-### CT02 – Login inválido
-Passos:
-1. Inserir usuário
-2. Inserir senha incorreta
-3. Clicar em entrar
+### CT02 – Login com senha inválida
 
-Resultado esperado:
-Mensagem de erro exibida
+**Pré-condição:** Usuário cadastrado
+
+**Passos:**
+1. Acessar a aplicação SauceDemo
+2. Inserir o usuário `standard_user`
+3. Inserir a senha inválida `123456`
+4. Clicar em `Login`
+
+**Resultado esperado:**
+Sistema deve exibir mensagem de erro informando que as credenciais são inválidas
+
+**Resultado obtido:**
+Mensagem de erro foi exibida com destaque em vermelho:  
+"Epic sadface: Username and password do not match any user in this service"
+
+**Status:** Aprovado
