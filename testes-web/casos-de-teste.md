@@ -42,3 +42,24 @@ Mensagem de erro foi exibida com destaque em vermelho:
 "Epic sadface: Username and password do not match any user in this service"
 
 **Status:** Aprovado
+
+---
+
+## CT03 – Login com campos vazios
+
+**Passos:**
+1. Acessar a aplicação SauceDemo
+2. Não preencher usuário nem senha
+3. Clicar em `Login`
+
+**Resultado esperado:**
+Sistema deve exibir mensagem informando que os campos de usuário e senha são obrigatórios
+
+**Resultado obtido:**
+Mensagem de erro exibida com destaque em vermelho:
+"Epic sadface: Username is required"
+
+**Status:** Reprovado
+
+**Observação:**
+O sistema informa apenas a ausência do usuário, não indicando que o campo de senha também é obrigatório.
