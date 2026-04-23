@@ -2,64 +2,126 @@
 
 > 🔗 **Sistema sob teste (SUT):** [SauceDemo](https://www.saucedemo.com/) – site fictício para prática de automação e testes manuais.
 
-### CT01 – Login com credenciais válidas
+## CT-01 – Login com credenciais válidas
 
-**Aplicação:** SauceDemo  
-**Ambiente:** Produção  
+**ID:** CT-01  
+**Módulo:** Login  
+**Versão:** v1.0  
+**Prioridade:** Alta  
+**Severidade:** Alta  
+**Tipo de teste:** Funcional 
+
 **Pré-condição:** Usuário cadastrado
 
-**Passos:**
-1. Acessar a aplicação
+### Passos:
+1. Acessar a aplicação SauceDemo
 2. Inserir o usuário `standard_user`
 3. Inserir a senha `secret_sauce`
 4. Clicar em `Login`
 
-**Resultado esperado:**
+### Resultado esperado:
 Usuário deve ser redirecionado para a página de produtos
 
-**Resultado obtido:**
-Usuário foi redirecionado para a página de produtos e a lista de itens foi exibida com sucesso
+### Resultado obtido:
+Usuário foi redirecionado para a página de produtos (Swag Labs), com listagem de itens e botões "Add to cart" visíveis
 
-**Status:** Aprovado
+### Status:
+Aprovado
+
+### Observação:
+Fluxo de autenticação executado com sucesso conforme esperado
 
 ---
 
-### CT02 – Login com senha inválida
+## CT-02 – Login com senha inválida
+
+**ID:** CT-02  
+**Módulo:** Login  
+**Versão:** v1.0  
+**Prioridade:** Alta  
+**Severidade:** Média  
+**Tipo de teste:** Funcional / Negativo
 
 **Pré-condição:** Usuário cadastrado
 
-**Passos:**
+### Passos:
 1. Acessar a aplicação SauceDemo
 2. Inserir o usuário `standard_user`
 3. Inserir a senha inválida `123456`
 4. Clicar em `Login`
 
-**Resultado esperado:**
+### Resultado esperado:
 Sistema deve exibir mensagem de erro informando que as credenciais são inválidas
 
-**Resultado obtido:**
+### Resultado obtido:
 Mensagem de erro foi exibida com destaque em vermelho:  
 "Epic sadface: Username and password do not match any user in this service"
 
-**Status:** Aprovado
+### Status:
+Aprovado
+
+### Observação:
+Sistema apresentou comportamento esperado ao bloquear acesso com credenciais inválidas
 
 ---
 
-## CT03 – Login com campos vazios
+## CT-03 – Login com campos vazios
 
-**Passos:**
+**ID:** CT-03  
+**Módulo:** Login  
+**Versão:** v1.0  
+**Prioridade:** Alta  
+**Severidade:** Média  
+**Tipo de teste:** Funcional / Validação  
+
+**Pré-condição:** Usuário na tela de login
+
+### Passos:
 1. Acessar a aplicação SauceDemo
 2. Não preencher usuário nem senha
 3. Clicar em `Login`
 
-**Resultado esperado:**
+### Resultado esperado:
 Sistema deve exibir mensagem informando que os campos de usuário e senha são obrigatórios
 
-**Resultado obtido:**
+### Resultado obtido:
 Mensagem de erro exibida com destaque em vermelho:
 "Epic sadface: Username is required"
 
-**Status:** Reprovado
+### Status:
+Reprovado
 
-**Observação:**
+### Observação:
 O sistema informa apenas a ausência do usuário, não indicando que o campo de senha também é obrigatório.
+
+---
+
+## CT-04 – Login com usuário bloqueado
+
+**ID:** CT-04  
+**Módulo:** Login  
+**Versão:** v1.0  
+**Prioridade:** Alta  
+**Severidade:** Média  
+**Tipo de teste:** Funcional / Regra de negócio  
+
+**Pré-condição:** Usuário bloqueado disponível (`locked_out_user`)  
+
+### Passos:
+1. Acessar a aplicação SauceDemo
+2. Inserir o usuário `locked_out_user`
+3. Inserir a senha `secret_sauce`
+4. Clicar em "Login"
+
+### Resultado esperado:
+Sistema deve impedir o acesso e exibir mensagem informando que o usuário está bloqueado
+
+### Resultado obtido:
+Mensagem exibida com destaque em vermelho:  
+"Epic sadface: Sorry, this user has been locked out."
+
+### Status:
+Aprovado
+
+### Observação:
+Sistema se comportou conforme esperado, bloqueando o acesso e exibindo mensagem clara ao usuário
