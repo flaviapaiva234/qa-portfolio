@@ -125,3 +125,42 @@ Aprovado
 
 ### Observação:
 Sistema se comportou conforme esperado, bloqueando o acesso e exibindo mensagem clara ao usuário
+
+---
+
+## CT-05 – Login com usuário problemático
+
+**ID:** CT-05  
+**Módulo:** Login / Produtos / Carrinho  
+**Versão:** v1.0  
+**Prioridade:** Alta  
+**Severidade:** Média  
+**Tipo de teste:** Funcional / Exploratório  
+
+**Pré-condição:** Usuário `problem_user` disponível  
+
+### Passos:
+1. Acessar a aplicação SauceDemo
+2. Inserir o usuário `problem_user`
+3. Inserir a senha `secret_sauce`
+4. Clicar em "Login"
+5. Navegar pela lista de produtos
+6. Selecionar um produto
+7. Adicionar o produto ao carrinho
+8. Acessar o carrinho
+
+### Resultado esperado:
+Usuário deve acessar a aplicação com todos os elementos visuais e funcionalidades operando corretamente, incluindo imagens, adição de produtos e cálculo de valores
+
+### Resultado obtido:
+Usuário acessou a aplicação, porém foram identificadas inconsistências:
+- imagens dos produtos exibidas incorretamente na listagem
+- ausência de funcionalidade para seleção de quantidade
+- valor total não exibido corretamente no carrinho
+
+### Status:
+Reprovado
+
+### Observação:
+Foram identificados múltiplos problemas na interface e no comportamento do sistema após login com usuário problemático
+
