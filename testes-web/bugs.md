@@ -37,8 +37,7 @@ Sistema deve informar que ambos os campos (usuário e senha) são obrigatórios.
 Usuário pode não compreender que ambos os campos são obrigatórios, comprometendo a interação com o sistema.
 
 ### Evidência:
-<img width="947" height="676" alt="image" src="https://github.com/user-attachments/assets/306bc7b7-5c31-47ac-afe2-c4180e6b09e7" />
-
+![mensagem de erro de login](evidencias/bug-001-login.png)
 
 ### Observação:
 A validação ocorre apenas para o campo de usuário, ignorando o campo de senha quando ambos estão vazios.
@@ -85,11 +84,12 @@ Usuário pode perder confiança na aplicação e tomar decisões incorretas de c
 
 ### Evidência:
 - Tela de produtos com imagens incorretas:
-<img width="1318" height="685" alt="image" src="https://github.com/user-attachments/assets/6c7e9baa-5493-4d4c-b8c5-c83623eeac8d" />
+![listagem com imagens incorretas](evidencias/bug-002-01-listagem-incorreta.png)
+
 
 
 - Tela do produto correto:
-<img width="1321" height="680" alt="image" src="https://github.com/user-attachments/assets/dcf8426a-f1e3-47f5-b65d-05ba90403ca8" />
+![detalhe do produto correto](evidencias/bug-002-02-detalhe-correto.png)
 
 
 
