@@ -95,3 +95,64 @@ Usuário pode perder confiança na aplicação e tomar decisões incorretas de c
 
 ### Observação:
 O problema ocorre apenas na listagem. Ao acessar o detalhe do produto, a imagem correta é exibida.
+
+---
+
+---
+
+## BUG-003 – Ausência de funcionalidade para seleção de quantidade do produto
+
+**Relacionado ao caso de teste:** CT-05 – Fluxo de produtos com problem_user  
+**Usuário impactado:** problem_user  
+
+**Ambiente:**
+- Aplicação: SauceDemo  
+- URL: https://www.saucedemo.com/  
+- Navegador: Chrome  
+- Data do teste: 25/04/2026  
+
+**Módulo:** Carrinho / Produtos  
+**Escopo afetado:** Detalhe do produto e carrinho de compras  
+**Severidade:** Média  
+**Prioridade:** Alta  
+**Tipo de defeito:** Funcional / UX / Possível melhoria  
+
+---
+
+### Passos para reprodução:
+1. Acessar a página de login  
+2. Inserir o usuário `problem_user`  
+3. Inserir a senha `secret_sauce`  
+4. Clicar no botão "Login"  
+5. Acessar a lista de produtos  
+6. Selecionar um produto  
+7. Verificar a presença de controle de quantidade  
+8. Adicionar o produto ao carrinho  
+9. Acessar o carrinho e verificar possibilidade de edição da quantidade  
+
+---
+
+### ❌ Resultado atual:
+Não há controle disponível para seleção de quantidade.  
+Tanto na página de detalhe quanto no carrinho, os itens são adicionados com quantidade fixa de 1 unidade, sem possibilidade de edição.
+
+---
+
+### ✅ Resultado esperado:
+O sistema deve permitir ao usuário selecionar a quantidade desejada do produto (ex: campo numérico, seletor ou botão de incremento/decremento), tanto antes de adicionar ao carrinho quanto dentro do carrinho.
+
+---
+
+### Impacto:
+Usuário fica impossibilitado de adquirir múltiplas unidades do mesmo produto, limitando a experiência de compra e podendo impactar negativamente a conversão de vendas.
+
+---
+
+### Evidência:
+![carrinho sem opção de quantidade](evidencias/bug-003-carrinho.png)
+
+---
+
+### Observação:
+A ausência de controle de quantidade pode representar uma limitação funcional do sistema e não necessariamente um erro.  
+Recomenda-se validação com os requisitos de negócio para confirmar se o comportamento é esperado ou se configura uma melhoria.
