@@ -128,10 +128,10 @@ Sistema se comportou conforme esperado, bloqueando o acesso e exibindo mensagem 
 
 ---
 
-## CT-05 – Login com usuário problemático
+## CT-05 – Fluxo completo com usuário problemático
 
 **ID:** CT-05  
-**Módulo:** Login / Produtos / Carrinho  
+**Módulo:** Login / Produtos / Carrinho / Checkout  
 **Versão:** v1.0  
 **Prioridade:** Alta  
 **Severidade:** Média  
@@ -140,27 +140,33 @@ Sistema se comportou conforme esperado, bloqueando o acesso e exibindo mensagem 
 **Pré-condição:** Usuário `problem_user` disponível  
 
 ### Passos:
-1. Acessar a aplicação SauceDemo
-2. Inserir o usuário `problem_user`
-3. Inserir a senha `secret_sauce`
-4. Clicar em "Login"
-5. Navegar pela lista de produtos
-6. Selecionar um produto
-7. Adicionar o produto ao carrinho
-8. Acessar o carrinho
+1. Acessar a aplicação SauceDemo  
+2. Inserir o usuário `problem_user`  
+3. Inserir a senha `secret_sauce`  
+4. Clicar em "Login"  
+5. Navegar pela lista de produtos  
+6. Selecionar um produto  
+7. Adicionar o produto ao carrinho  
+8. Acessar o carrinho  
+9. Clicar em "Checkout"  
+10. Preencher o campo "First Name"  
+11. Tentar preencher o campo "Last Name"  
+12. Preencher o campo "Zip Code"  
+13. Clicar em "Continue"  
 
 ### Resultado esperado:
-Usuário deve acessar a aplicação com todos os elementos visuais e funcionalidades operando corretamente, incluindo imagens, adição de produtos e cálculo de valores
+Usuário deve conseguir navegar por todo o fluxo da aplicação, incluindo visualização correta dos produtos e finalização do checkout sem erros.
 
 ### Resultado obtido:
 Usuário acessou a aplicação, porém foram identificadas inconsistências:
-- imagens dos produtos exibidas incorretamente na listagem
-- ausência de funcionalidade para seleção de quantidade
-- valor total não exibido corretamente no carrinho
+
+- Imagens dos produtos exibidas incorretamente na listagem (BUG-002)  
+- Falha no campo "Last Name", que corrompe o valor do campo "First Name" e impede a continuidade no checkout (BUG-004)  
 
 ### Status:
-Reprovado
+Reprovado  
 
 ### Observação:
-Foram identificados múltiplos problemas na interface e no comportamento do sistema após login com usuário problemático
+Os defeitos identificados ocorrem exclusivamente com o perfil `problem_user`.  
+Com o usuário `standard_user`, as imagens são exibidas corretamente e o fluxo de checkout funciona normalmente, incluindo o preenchimento dos campos.
 
