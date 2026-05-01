@@ -131,3 +131,67 @@ Usuário fica impossibilitado de adquirir múltiplas unidades do mesmo produto, 
 A ausência de controle de quantidade foi observada em todos os perfis de usuário testados.  
 Isso indica que o comportamento pode ser uma limitação da aplicação e não necessariamente um defeito.  
 Recomenda-se validação com os requisitos de negócio para confirmação.
+
+---
+
+## BUG-004 – Campo "Last Name" corrompe preenchimento do "First Name" no checkout
+
+**Relacionado ao caso de teste:** CT-05 – Fluxo completo com problem_user  
+**Usuário impactado:** problem_user  
+
+**Ambiente:**
+- Aplicação: SauceDemo  
+- URL: https://www.saucedemo.com/  
+- Navegador: Chrome  
+- Data do teste: 29/04/2026  
+
+**Módulo:** Checkout  
+**Escopo afetado:** Formulário de informações do cliente  
+**Severidade:** Alta  
+**Prioridade:** Alta  
+**Tipo de defeito:** Funcional  
+
+---
+
+### Passos para reprodução:
+1. Acessar a página de login  
+2. Inserir o usuário `problem_user`  
+3. Inserir a senha `secret_sauce`  
+4. Clicar em "Login"  
+5. Adicionar qualquer produto ao carrinho  
+6. Acessar o carrinho e clicar em "Checkout"  
+7. Preencher o campo "First Name" com um valor válido (ex.: `João`)  
+8. Clicar no campo "Last Name" e digitar um valor (ex.: `Silva`)  
+
+---
+
+### ❌ Resultado atual:
+Ao digitar no campo "Last Name", o valor previamente informado no campo "First Name" é alterado indevidamente, permanecendo apenas o primeiro caractere.  
+
+Em seguida, o sistema exibe a mensagem "Error: First Name is required", impedindo a continuidade do checkout.
+
+---
+
+### ✅ Resultado esperado:
+Os campos "First Name" e "Last Name" devem manter seus valores independentemente durante o preenchimento.  
+
+Após preencher corretamente todos os campos obrigatórios, o sistema deve permitir avançar para a próxima etapa do checkout.
+
+---
+
+### Impacto:
+O usuário fica impossibilitado de finalizar a compra, pois o formulário se torna inválido mesmo com os campos preenchidos. Isso compromete a conclusão do fluxo de compra e a confiabilidade do sistema.
+
+---
+
+### Evidência:
+![checkout com erro no first name](evidencias/bug-004-checkout-firstname.png)
+
+---
+
+### Observação:
+O problema ocorre exclusivamente com o perfil `problem_user`.  
+
+Com o usuário `standard_user`, o preenchimento dos campos ocorre normalmente e o fluxo de checkout é concluído com sucesso.  
+
+O comportamento indica possível falha na manipulação de estado do formulário (ex.: binding ou validação entre campos).
