@@ -1,17 +1,46 @@
-# qa-portfolio
-Portfólio de testes de software (QA) com casos de teste e identificação de bugs
+# 📁 qa-portfolio
 
-# 👩‍💻 Flávia Paiva – Portfólio de QA
+Portfólio de QA com testes manuais, casos de teste e bugs documentados
 
-Este repositório contém meus estudos e práticas em Qualidade de Software (QA), com foco em testes manuais, criação de casos de teste e identificação de bugs.
+---
+
+## 👩‍💻 Flávia Paiva – QA em formação
+
+Este repositório apresenta um projeto prático de Quality Assurance, simulando o dia a dia de um profissional de QA, com foco em **testes manuais**, **criação de casos de teste** e **identificação e documentação de bugs**.
+
+---
 
 ## 🎯 Objetivo
-Demonstrar minhas habilidades em validação de sistemas, análise de comportamento e garantia da qualidade de aplicações.
 
-## 🧪 O que você vai encontrar:
-- Casos de teste
-- Relatórios de bugs
-- Testes em aplicações web e mobile
+Demonstrar aplicação prática de testes manuais, incluindo criação de cenários, execução de testes exploratórios e documentação estruturada de bugs.
 
-## 🚀 Em desenvolvimento
-Este portfólio está em constante evolução com novos testes e análises.
+---
+
+## 📂 O que você vai encontrar
+
+- 📝 **Casos de Teste** – cenários positivos, negativos e exploratórios  
+- 🐞 **Relatório de Bugs** – bugs identificados durante execução de testes com severidade, impacto e evidências  
+- 🧪 **Testes em Aplicação Web** – prática com o site [SauceDemo](https://www.saucedemo.com/)  
+- 📸 **Evidências visuais** – prints organizados por bug  
+
+🔗 Acesse a pasta principal: [`testes-web`](./testes-web/)
+
+---
+
+## 🛠️ Habilidades aplicadas
+
+- Testes manuais funcionais  
+- Testes exploratórios  
+- Elaboração e documentação de casos de teste  
+- Análise de severidade e prioridade de bugs  
+- Rastreabilidade entre casos de teste e bugs  
+- Organização de evidências  
+- Versionamento com Git e GitHub  
+
+---
+
+## 📌 Em constante evolução
+
+Este portfólio é atualizado à medida que novos testes e análises são realizados.
+
+🔗 Conecte-se comigo no LinkedIn: [linkedin.com/in/flaviapaiva234](https://www.linkedin.com/in/flaviapaiva234)
