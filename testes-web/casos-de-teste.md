@@ -170,3 +170,59 @@ Reprovado
 Os defeitos identificados ocorrem exclusivamente com o perfil `problem_user`.  
 Com o usuário `standard_user`, as imagens são exibidas corretamente e o fluxo de checkout funciona normalmente, incluindo o preenchimento dos campos.
 
+---
+
+## CT-06 – Fluxo completo com usuário válido (fluxo feliz)
+
+**ID:** CT-06  
+**Módulo:** Login / Produtos / Carrinho / Checkout  
+**Versão:** v1.0  
+**Prioridade:** Alta  
+**Severidade:** Alta  
+**Tipo de teste:** Funcional / E2E (End-to-End)  
+
+**Pré-condição:** Usuário `standard_user` disponível  
+
+### Passos:
+1. Acessar a aplicação SauceDemo  
+2. Inserir o usuário `standard_user`  
+3. Inserir a senha `secret_sauce`  
+4. Clicar em "Login"  
+5. Verificar carregamento da lista de produtos  
+6. Adicionar um produto ao carrinho (ex.: "Sauce Labs Backpack")  
+7. Acessar o carrinho  
+8. Verificar se o produto foi adicionado corretamente  
+9. Clicar em "Checkout"  
+10. Preencher o campo "First Name"  
+11. Preencher o campo "Last Name"  
+12. Preencher o campo "Zip Code"  
+13. Clicar em "Continue"  
+14. Verificar exibição do resumo da compra  
+15. Validar valores (item total, taxa e total geral)  
+16. Clicar em "Finish"  
+
+### Resultado esperado:
+Usuário deve conseguir completar todo o fluxo da aplicação com sucesso, desde o login até a finalização da compra, com:
+
+- Produtos exibidos corretamente  
+- Item adicionado ao carrinho  
+- Formulário de checkout funcionando corretamente  
+- Valores calculados corretamente  
+- Confirmação de pedido exibida ao final  
+
+### Resultado obtido:
+Usuário conseguiu navegar por todo o fluxo sem erros:
+
+- Login realizado com sucesso  
+- Produto adicionado ao carrinho corretamente  
+- Campos do checkout preenchidos sem inconsistências  
+- Valores exibidos corretamente no resumo  
+- Mensagem final exibida: "Thank you for your order!"  
+
+### Status:
+Aprovado  
+
+### Observação:
+Este teste valida o fluxo principal da aplicação (happy path), servindo como linha de base para os cenários exploratórios e negativos (como o CT-05).  
+Garante que as funcionalidades críticas estão operando corretamente em condições normais de uso.
+
