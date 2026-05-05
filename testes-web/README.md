@@ -6,7 +6,7 @@ Este diretório apresenta a execução prática de testes manuais na aplicação
 
 ## 🎯 Objetivo
 
-Validar o comportamento do sistema em diferentes cenários, identificando falhas funcionais, inconsistências visuais e problemas de usabilidade ao longo do fluxo da aplicação.
+Validar o comportamento do sistema em diferentes cenários, identificando falhas funcionais, inconsistências visuais e problemas de usabilidade ao longo do fluxo da aplicação, incluindo validação de fluxos críticos como login, carrinho e checkout.
 
 ---
 
@@ -27,6 +27,7 @@ Validar o comportamento do sistema em diferentes cenários, identificando falhas
 - Login com campos vazios  
 - Login com usuário bloqueado  
 - Fluxo completo com usuário problemático  
+- Fluxo completo com usuário válido (happy path)  
 - Fluxo de navegação até o carrinho  
 - Fluxo de checkout  
 
@@ -34,9 +35,9 @@ Validar o comportamento do sistema em diferentes cenários, identificando falhas
 
 ## 📂 Estrutura do diretório
 
-- `casos-de-teste.md` → Casos de teste detalhados  
-- `bugs.md` → Relatório de bugs identificados  
-- `evidencias/` → Imagens utilizadas como prova dos bugs  
+- [`casos-de-teste.md`](./casos-de-teste.md) → Casos de teste detalhados  
+- [`bugs.md`](./bugs.md) → Relatório de bugs identificados  
+- [`evidencias/`](./evidencias/) → Imagens utilizadas como prova dos bugs  
 
 ---
 
@@ -44,10 +45,11 @@ Validar o comportamento do sistema em diferentes cenários, identificando falhas
 
 Os testes e bugs estão diretamente relacionados, permitindo rastrear falhas desde a execução até sua documentação:
 
-- CT-03 → BUG-001 (validação incompleta)
-- CT-05 → BUG-002 (imagens incorretas)
-- CT-05 → BUG-003 (ausência de seletor de quantidade — classificado como possível melhoria)
-- CT-05 → BUG-004 (falha no checkout)
+- CT-03 → BUG-001 (validação incompleta)  
+- CT-05 → BUG-002 (imagens incorretas)  
+- CT-05 → BUG-003 (ausência de seletor de quantidade — classificado como possível melhoria)  
+- CT-05 → BUG-004 (falha crítica no checkout)  
+- CT-06 → Validação do fluxo completo sem erros (happy path)  
 
 ---
 
@@ -76,3 +78,4 @@ Este projeto simula o dia a dia de um QA, incluindo:
 - Identificação de falhas  
 - Documentação estruturada  
 - Organização de evidências  
+- Rastreabilidade entre testes e bugs  
