@@ -226,3 +226,52 @@ Aprovado
 Este teste valida o fluxo principal da aplicação (happy path), servindo como linha de base para os cenários exploratórios e negativos (como o CT-05).  
 Garante que as funcionalidades críticas estão operando corretamente em condições normais de uso.
 
+---
+
+## CT-07 – Comportamento da aplicação com usuário de performance degradada
+
+**ID:** CT-07  
+**Módulo:** Login / Produtos  
+**Versão:** v1.0  
+**Prioridade:** Média  
+**Severidade:** Média  
+**Tipo de teste:** Não funcional / Performance / Exploratório  
+
+**Pré-condição:** Usuário `performance_glitch_user` disponível  
+
+---
+
+### Passos:
+1. Acessar a aplicação SauceDemo  
+2. Inserir o usuário `performance_glitch_user`  
+3. Inserir a senha `secret_sauce`  
+4. Clicar em "Login"  
+5. Observar o tempo de carregamento da página de produtos  
+6. Navegar pela lista de produtos  
+7. Interagir com elementos da página (ex.: rolagem, clique em produtos, botões "Add to cart")  
+
+---
+
+### Resultado esperado:
+A aplicação deve apresentar tempo de resposta aceitável, com carregamento rápido da lista de produtos e interação fluida com os elementos da interface.
+
+---
+
+### Resultado obtido:
+Foram observados atrasos significativos no carregamento da página e na exibição dos produtos.
+
+- Tempo de carregamento elevado após login  
+- Renderização lenta das imagens e elementos da página  
+- Interação com a interface apresenta atraso perceptível  
+
+---
+
+### Status:
+Reprovado  
+
+---
+
+### Observação:
+O comportamento degradado ocorre especificamente com o usuário `performance_glitch_user`, indicando um cenário simulado de problema de performance.
+
+Esse teste evidencia a importância da validação de requisitos não funcionais, como tempo de resposta e experiência do usuário, além dos testes funcionais tradicionais.
