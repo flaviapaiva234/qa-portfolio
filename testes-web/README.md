@@ -6,7 +6,7 @@ Este diretório apresenta a execução prática de testes manuais na aplicação
 
 ## 🎯 Objetivo
 
-Validar o comportamento do sistema em diferentes cenários, identificando falhas funcionais, inconsistências visuais e problemas de usabilidade ao longo do fluxo da aplicação, incluindo validação de fluxos críticos como login, carrinho e checkout.
+Validar o comportamento do sistema em diferentes cenários, identificando falhas funcionais, inconsistências visuais, problemas de usabilidade e degradação de performance ao longo do fluxo da aplicação.
 
 ---
 
@@ -16,6 +16,7 @@ Validar o comportamento do sistema em diferentes cenários, identificando falhas
 - Testes de login  
 - Testes de validação de campos  
 - Testes exploratórios  
+- Testes de performance (não funcionais)  
 - Análise de comportamento do sistema  
 
 ---
@@ -30,14 +31,15 @@ Validar o comportamento do sistema em diferentes cenários, identificando falhas
 - Fluxo completo com usuário válido (happy path)  
 - Fluxo de navegação até o carrinho  
 - Fluxo de checkout  
+- Teste de performance degradada com `performance_glitch_user`  
 
 ---
 
 ## 📂 Estrutura do diretório
 
-- [`casos-de-teste.md`](./casos-de-teste.md) → Casos de teste detalhados  
-- [`bugs.md`](./bugs.md) → Relatório de bugs identificados  
-- [`evidencias/`](./evidencias/) → Imagens utilizadas como prova dos bugs  
+- `casos-de-teste.md` → Casos de teste detalhados  
+- `bugs.md` → Relatório de bugs identificados  
+- `evidencias/` → Imagens utilizadas como prova dos bugs  
 
 ---
 
@@ -45,11 +47,12 @@ Validar o comportamento do sistema em diferentes cenários, identificando falhas
 
 Os testes e bugs estão diretamente relacionados, permitindo rastrear falhas desde a execução até sua documentação:
 
-- CT-03 → BUG-001 (validação incompleta)  
-- CT-05 → BUG-002 (imagens incorretas)  
-- CT-05 → BUG-003 (ausência de seletor de quantidade — classificado como possível melhoria)  
-- CT-05 → BUG-004 (falha crítica no checkout)  
-- CT-06 → Validação do fluxo completo sem erros (happy path)  
+- CT-03 → BUG-001 (validação incompleta)
+- CT-05 → BUG-002 (imagens incorretas)
+- CT-05 → BUG-003 (ausência de seletor de quantidade — classificado como possível melhoria)
+- CT-05 → BUG-004 (falha crítica no checkout)
+- CT-06 → Validação do fluxo completo sem erros (happy path)
+- CT-07 → BUG-005 (lentidão perceptível na navegação)
 
 ---
 
@@ -59,6 +62,7 @@ Os testes e bugs estão diretamente relacionados, permitindo rastrear falhas des
 - Falha de validação de campos obrigatórios  
 - Erro crítico no fluxo de checkout (impede finalização da compra)  
 - Ausência de controle de quantidade (analisado como possível melhoria)  
+- Lentidão perceptível na navegação e carregamento da interface  
 
 ---
 
@@ -67,6 +71,8 @@ Os testes e bugs estão diretamente relacionados, permitindo rastrear falhas des
 Durante os testes, foram identificados comportamentos que inicialmente pareciam bugs, mas após validação foram classificados como limitações do sistema.
 
 Essa análise reforça a importância do pensamento crítico em QA, evitando a classificação incorreta de defeitos (falsos positivos) e melhorando a qualidade dos resultados.
+
+Além dos testes funcionais, também foram explorados cenários relacionados à experiência do usuário e performance da aplicação.
 
 ---
 
@@ -79,3 +85,4 @@ Este projeto simula o dia a dia de um QA, incluindo:
 - Documentação estruturada  
 - Organização de evidências  
 - Rastreabilidade entre testes e bugs  
+- Análise funcional e não funcional
