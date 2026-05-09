@@ -195,3 +195,64 @@ O problema ocorre exclusivamente com o perfil `problem_user`.
 Com o usuário `standard_user`, o preenchimento dos campos ocorre normalmente e o fluxo de checkout é concluído com sucesso.  
 
 O comportamento indica possível falha na manipulação de estado do formulário (ex.: binding ou validação entre campos).
+
+## BUG-005 – Lentidão perceptível na navegação da aplicação
+
+**Relacionado ao caso de teste:** CT-07 – Comportamento da aplicação com usuário de performance degradada  
+**Usuário impactado:** performance_glitch_user  
+
+**Ambiente:**
+- Aplicação: SauceDemo  
+- URL: https://www.saucedemo.com/  
+- Navegador: Chrome  
+- Data do teste: 07/05/2026  
+
+**Módulo:** Login / Produtos / Carrinho  
+**Escopo afetado:** Navegação entre páginas e carregamento da interface  
+**Severidade:** Média  
+**Prioridade:** Média  
+**Tipo de defeito:** Performance / UX  
+
+---
+
+### Passos para reprodução:
+1. Acessar a página de login  
+2. Inserir o usuário `performance_glitch_user`  
+3. Inserir a senha `secret_sauce`  
+4. Clicar em "Login"  
+5. Navegar pela aplicação e adicionar produtos ao carrinho  
+6. Acessar a página do carrinho (`cart.html`)  
+7. Utilizar a navegação para retornar à página de produtos (`inventory.html`)  
+8. Observar o comportamento de carregamento da aplicação  
+
+---
+
+### ❌ Resultado atual:
+A aplicação apresenta lentidão perceptível durante a navegação entre páginas.
+
+Foram observados:
+- demora no carregamento da página de produtos (`inventory.html`)  
+- atraso na resposta da interface durante navegação  
+- renderização lenta de elementos da página  
+
+---
+
+### ✅ Resultado esperado:
+A aplicação deve apresentar navegação fluida entre páginas, carregando os elementos da interface em tempo aceitável e mantendo boa experiência de uso.
+
+---
+
+### Impacto:
+A lentidão compromete a experiência do usuário, podendo causar sensação de instabilidade, dificuldade de navegação e abandono do fluxo da aplicação.
+
+---
+
+### Evidência:
+![lentidão na navegação da aplicação](evidencias/bug-005-performance-navigation.png)
+
+---
+
+### Observação:
+O comportamento ocorre especificamente com o perfil `performance_glitch_user`, indicando um cenário simulado de degradação de performance.
+
+O teste reforça a importância da validação de requisitos não funcionais relacionados ao tempo de resposta e experiência do usuário.
